@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("🎸 カートコバーン絵描き歌（無料版）")
+st.title("🔥絶対変わるテスト🔥")
 
 name = st.text_input("名前を入れてね（カートコバーン）")
 
@@ -16,23 +16,21 @@ data = {
         ],
         "svg": """
 <svg width="200" height="200">
+    <!-- 髪（塊で強調） -->
+    <rect x="40" y="40" width="120" height="40" stroke="black" fill="none"/>
+
     <!-- 顔 -->
-    <circle cx="100" cy="90" r="40" stroke="black" fill="none"/>
+    <circle cx="100" cy="100" r="40" stroke="black" fill="none"/>
 
-    <!-- 髪（前にかかる感じ） -->
-    <line x1="50" y1="50" x2="150" y2="50" stroke="black"/>
-    <line x1="60" y1="55" x2="140" y2="55" stroke="black"/>
-    <line x1="70" y1="60" x2="130" y2="60" stroke="black"/>
+    <!-- 目（かなり眠そう） -->
+    <line x1="75" y1="100" x2="95" y2="100" stroke="black"/>
+    <line x1="105" y1="100" x2="125" y2="100" stroke="black"/>
 
-    <!-- 目（眠そう） -->
-    <line x1="80" y1="90" x2="95" y2="90" stroke="black"/>
-    <line x1="105" y1="90" x2="120" y2="90" stroke="black"/>
-
-    <!-- 口（やる気ない） -->
-    <line x1="90" y1="110" x2="110" y2="110" stroke="black"/>
+    <!-- 口 -->
+    <line x1="90" y1="120" x2="110" y2="120" stroke="black"/>
 
     <!-- ギター -->
-    <rect x="70" y="130" width="60" height="25" stroke="black" fill="none"/>
+    <rect x="70" y="140" width="60" height="20" stroke="black" fill="none"/>
 </svg>
 """
     }
