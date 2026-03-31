@@ -1,11 +1,12 @@
 import streamlit as st
+import base64
 
-st.title("🎸 カートコバーン絵描き歌（確実表示版）")
+st.title("🎸 カートコバーン絵描き歌（完全表示版）")
 
 name = st.text_input("名前を入れてね（カートコバーン）")
 
 svg_data = """
-<svg width="220" height="240" viewBox="0 0 220 240">
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="240" viewBox="0 0 220 240">
 
     <!-- 髪 -->
     <path d="M40,80 C60,20 160,20 180,80 
@@ -34,6 +35,10 @@ svg_data = """
 </svg>
 """
 
+# SVGを画像化
+def svg_to_base64(svg):
+    return base64.b64encode(svg.encode('utf-8')).decode('utf-8')
+
 if st.button("生成する"):
 
     if name == "カートコバーン":
@@ -50,7 +55,9 @@ if st.button("生成する"):
         st.write("力のぬけた口でできあがり！")
 
         st.write("🖼 イラスト")
-        st.image(svg_data)
+
+        img = svg_to_base64(svg_data)
+        st.markdown(f'<img src="data:image/svg+xml;base64,{img}"/>', unsafe_allow_html=True)
 
     else:
         st.write("カートコバーンって入力してね！")
