@@ -1,51 +1,37 @@
 import streamlit as st
 
-st.title("🎸 カートコバーン絵描き歌（限界版）")
+st.title("🎸 カートコバーン絵描き歌（ちょいリアル）")
 
 name = st.text_input("名前を入れてね（カートコバーン）")
 
 data = {
     "カートコバーン": {
-        "features": ["顔にかかる長い髪", "左右ズレた眠そうな目", "やる気ない表情"],
+        "features": ["長い髪", "少し細い顔", "眠そうな目"],
         "song": [
-            "ズレた丸をだるくかいて〜",
-            "顔にかぶさる髪をバサバサ落として〜",
-            "左右ちがうねむそうな目をいれて〜",
-            "ちょっと曲がった口をかいたら〜",
-            "ロックな脱力でできあがり！"
+            "たまごみたいな顔をかいて〜",
+            "上から長い髪を流すようにかいて〜",
+            "ねむそうな目をすこしズラしてかいて〜",
+            "口を軽くひいたら〜",
+            "ロックな雰囲気でできあがり！"
         ],
         "svg": """
-<svg width="220" height="220">
+<svg width="200" height="220">
 
-    <!-- 髪（大量・ランダム風） -->
-    <line x1="20" y1="30" x2="80" y2="120" stroke="black"/>
-    <line x1="40" y1="20" x2="100" y2="130" stroke="black"/>
-    <line x1="60" y1="25" x2="120" y2="140" stroke="black"/>
-    <line x1="80" y1="30" x2="140" y2="130" stroke="black"/>
-    <line x1="100" y1="20" x2="160" y2="140" stroke="black"/>
-    <line x1="120" y1="30" x2="180" y2="120" stroke="black"/>
-    <line x1="140" y1="25" x2="190" y2="130" stroke="black"/>
+    <!-- 顔（少し縦長） -->
+    <ellipse cx="100" cy="110" rx="40" ry="50" stroke="black" fill="none"/>
 
-    <!-- 顔（ズレ） -->
-    <circle cx="115" cy="110" r="45" stroke="black" fill="none"/>
+    <!-- 髪（流れ） -->
+    <line x1="60" y1="50" x2="80" y2="160" stroke="black"/>
+    <line x1="80" y1="50" x2="100" y2="170" stroke="black"/>
+    <line x1="100" y1="50" x2="120" y2="165" stroke="black"/>
+    <line x1="120" y1="50" x2="140" y2="160" stroke="black"/>
 
-    <!-- 目（非対称） -->
-    <line x1="85" y1="105" x2="100" y2="103" stroke="black"/>
-    <line x1="120" y1="110" x2="140" y2="112" stroke="black"/>
+    <!-- 目 -->
+    <line x1="80" y1="110" x2="95" y2="108" stroke="black"/>
+    <line x1="105" y1="115" x2="120" y2="115" stroke="black"/>
 
-    <!-- 眉（適当） -->
-    <line x1="85" y1="95" x2="100" y2="93" stroke="black"/>
-    <line x1="120" y1="100" x2="140" y2="98" stroke="black"/>
-
-    <!-- 口（歪み） -->
-    <line x1="95" y1="135" x2="125" y2="140" stroke="black"/>
-
-    <!-- 首 -->
-    <line x1="105" y1="155" x2="105" y2="175" stroke="black"/>
-    <line x1="125" y1="155" x2="125" y2="175" stroke="black"/>
-
-    <!-- ギター（ラフ） -->
-    <rect x="70" y="175" width="80" height="25" stroke="black" fill="none"/>
+    <!-- 口 -->
+    <line x1="90" y1="140" x2="110" y2="142" stroke="black"/>
 
 </svg>
 """
