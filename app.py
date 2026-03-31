@@ -1,20 +1,10 @@
 import streamlit as st
 
-st.title("🎸 カートコバーン絵描き歌（表示修正版）")
+st.title("🎸 カートコバーン絵描き歌（確実表示版）")
 
 name = st.text_input("名前を入れてね（カートコバーン）")
 
-data = {
-    "カートコバーン": {
-        "features": ["顔にかかる長い髪", "眠そうな目", "ラフな雰囲気"],
-        "song": [
-            "たまごみたいな顔をかいて〜",
-            "上から髪をふわっとかぶせて〜",
-            "前に落ちる髪を2本たして〜",
-            "ねむそうな目をさらっとかいて〜",
-            "力のぬけた口でできあがり！"
-        ],
-        "svg": """
+svg_data = """
 <svg width="220" height="240" viewBox="0 0 220 240">
 
     <!-- 髪 -->
@@ -43,25 +33,24 @@ data = {
 
 </svg>
 """
-    }
-}
 
 if st.button("生成する"):
 
     if name == "カートコバーン":
 
-        item = data[name]
-
         st.write("🧠 特徴")
-        for f in item["features"]:
-            st.write("-", f)
+        st.write("- 顔にかかる長い髪")
+        st.write("- 眠そうな目")
 
         st.write("🎵 絵描き歌")
-        for line in item["song"]:
-            st.write(line)
+        st.write("たまごみたいな顔をかいて〜")
+        st.write("上から髪をふわっとかぶせて〜")
+        st.write("前に落ちる髪を2本たして〜")
+        st.write("ねむそうな目をさらっとかいて〜")
+        st.write("力のぬけた口でできあがり！")
 
         st.write("🖼 イラスト")
-        st.components.v1.html(item["svg"], height=260)
+        st.image(svg_data)
 
     else:
         st.write("カートコバーンって入力してね！")
